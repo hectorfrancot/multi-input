@@ -1,0 +1,35 @@
+<span [ngSwitch]="type">
+  <div *ngSwitchCase="'checkbox'">
+    <hc-checkbox id="light" [(ngModel)]="value">{{ labelText }}</hc-checkbox>
+  </div>
+  <div *ngSwitchCase="'text'">
+    <hc-form-field>
+      <hc-label>{{ labelText }}</hc-label>
+      <input hcInput type="text" [required]="required" [(ngModel)]="value" />
+      <hc-error>{{ requiredText }}</hc-error>
+    </hc-form-field>
+  </div>
+  <div *ngSwitchCase="'number'">
+    <hc-form-field>
+      <hc-label>{{ labelText }}</hc-label>
+      <input hcInput type="number" [required]="required" [(ngModel)]="value" />
+      <hc-error>{{ requiredText }}</hc-error>
+    </hc-form-field>
+  </div>
+  <div *ngSwitchCase="'date'">
+    <hc-form-field>
+      <hc-label>{{ labelText }}</hc-label>
+      <input
+        hcInput
+        [hcDatepicker]="picker1"
+        placeholder="Select date..."
+        class="cursor-pointer"
+        [(ngModel)]="value"
+        [required]="required"
+      />
+      <hc-error>{{ requiredText }}</hc-error>
+      <hc-datepicker-toggle hcSuffix [for]="picker1"></hc-datepicker-toggle>
+      <hc-datepicker #picker1></hc-datepicker>
+    </hc-form-field>
+  </div>
+</span>

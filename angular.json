@@ -24,7 +24,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/npm-font-open-sans/open-sans.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
